@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest
+    container_name: transacoes-simplificado
+    restart: always
+    environment:
+      - MYSQL_DATABASE=transacoes-simplificado
+      - MYSQL_ROOT_PASSWORD=123
+    ports:
+      - '3306:3306'
+    volumes:
+      - volume:/var/lib/mysql
+volumes:
+  volume:
+    driver: local
